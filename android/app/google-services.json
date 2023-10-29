@@ -1,0 +1,119 @@
+{
+  "project_info": {
+    "project_number": "663934942595",
+    "firebase_url": "https://patient-app-2c555-default-rtdb.firebaseio.com",
+    "project_id": "patient-app-2c555",
+    "storage_bucket": "patient-app-2c555.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663934942595:android:361448f300e06e07b74ab6",
+        "android_client_info": {
+          "package_name": "com.example.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663934942595-3eq3koaqudltffft6n3l221i19e7hfmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpjmCDbPUt-jHOOyy_oEEhOktim_RMAxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663934942595-3eq3koaqudltffft6n3l221i19e7hfmu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "663934942595-7hk0vqnmj77k2mesb2ohfoavhpuggg7r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.patientApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663934942595:android:b1e5199d401b97dbb74ab6",
+        "android_client_info": {
+          "package_name": "com.example.doctor_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663934942595-3eq3koaqudltffft6n3l221i19e7hfmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpjmCDbPUt-jHOOyy_oEEhOktim_RMAxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663934942595-3eq3koaqudltffft6n3l221i19e7hfmu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "663934942595-7hk0vqnmj77k2mesb2ohfoavhpuggg7r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.patientApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:663934942595:android:036303c7a31568a9b74ab6",
+        "android_client_info": {
+          "package_name": "com.example.patient_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "663934942595-3eq3koaqudltffft6n3l221i19e7hfmu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpjmCDbPUt-jHOOyy_oEEhOktim_RMAxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "663934942595-3eq3koaqudltffft6n3l221i19e7hfmu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "663934942595-7hk0vqnmj77k2mesb2ohfoavhpuggg7r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.patientApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
