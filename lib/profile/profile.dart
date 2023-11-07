@@ -16,7 +16,7 @@ class Profile extends StatefulWidget {
 }
 
 class ProfileState extends State<Profile> {
-  final user = FirebaseAuth.instance.currentUser!;
+  final user = FirebaseAuth.instance.currentUser;
   bool status = false;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
   String? email;
@@ -24,7 +24,7 @@ class ProfileState extends State<Profile> {
   @override
   void initState() {
     super.initState();
-    email = user.email;
+    email = user!.email;
   }
   
   Widget _girlIconImage(){
@@ -295,7 +295,7 @@ class ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    final DocumentReference documentReference = firestore.collection('patient_users').doc(user.uid);
+    final DocumentReference documentReference = firestore.collection('patient_users').doc(user!.uid);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Profile'),

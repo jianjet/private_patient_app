@@ -5,3 +5,10 @@ enum Roles {
   pharmacist,
   porter
 }
+
+enum ApprovalStatus {
+  pending,
+  approved,
+  rejected,
+  failed
+}

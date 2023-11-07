@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-import '../user_authentication/utils.dart';
+import '../utils.dart';
 
 class AppointmentDialog extends StatefulWidget {
   const AppointmentDialog({Key? key}) : super(key: key);

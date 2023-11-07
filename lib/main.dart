@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:patient_app/errorpage.dart';
 import 'package:patient_app/user_authentication/email_verify.dart';
 import 'package:patient_app/user_authentication/signin.dart';
-import 'package:patient_app/user_authentication/utils.dart';
+import 'package:patient_app/utils.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {

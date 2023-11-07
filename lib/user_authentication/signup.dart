@@ -4,7 +4,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:patient_app/user_authentication/signin.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:patient_app/user_authentication/utils.dart';
+import 'package:patient_app/utils.dart';
 import '../main.dart';
 import 'consent.dart';
 

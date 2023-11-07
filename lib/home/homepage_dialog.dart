@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:patient_app/user_authentication/utils.dart';
+import 'package:patient_app/utils.dart';
 
 class HomepageDialog extends StatefulWidget {
   String healthField;

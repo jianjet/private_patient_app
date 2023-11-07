@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
-import '../../user_authentication/utils.dart';
+import '../../utils.dart';
 
 class MakeAppointment extends StatefulWidget {
   String doctorName;
