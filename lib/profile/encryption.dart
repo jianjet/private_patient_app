@@ -24,4 +24,3 @@ class AESEncryptionForPatientHealthRecords {
 
   getCode(String encoded) => encrypt.Encrypted.fromBase64(encoded);
 }
-

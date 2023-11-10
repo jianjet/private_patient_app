@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:patient_app/AddPatientHealthRecord/AddPatientHealthRecord.dart';
 import 'package:patient_app/appointment/appointment.dart';
 import 'package:patient_app/home/goals_more.dart';
 import 'package:patient_app/medicine/search_medicine.dart';
@@ -369,6 +370,10 @@ class HomepageState extends State<Homepage> {
     Navigator.push(context, MaterialPageRoute(builder: ((context) => const SearchMedicine())));
   }
 
+  void _pushAddPatientHealthRecord(){
+    Navigator.push(context, MaterialPageRoute(builder: ((context) => AddPatientHealthRecord(patient_uid: user!.uid,))));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -387,7 +392,7 @@ class HomepageState extends State<Homepage> {
           silverListConstant(_otherRows('./image/search_doctor.png', 'Search Doctors', _pushSearchDoctors), 1),
           silverListConstant(_otherRows('./image/tracker_icon.png', 'Symptoms Tracker', _pushTracker), 1),
           silverListConstant(_otherRows('./image/location_icon.png', 'Appointments', _pushAppointment), 1),
-          //silverListConstant(_otherRows('./image/medicine.png', 'Medicine Delivery', _pushMedicine), 1),
+          silverListConstant(_otherRows('./image/records.png', 'Health Records', _pushAddPatientHealthRecord), 1),
         ],
       )
     );

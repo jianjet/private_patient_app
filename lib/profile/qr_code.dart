@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:patient_app/classes_enums_dicts/roles_enum.dart';
 import 'package:patient_app/profile/encryption.dart';
 import 'package:patient_app/utils.dart';
+import 'package:simple_rsa3/simple_rsa3.dart';
 import '../errorpage.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
@@ -19,6 +22,7 @@ class QRState extends State<QR> {
   final user = FirebaseAuth.instance.currentUser;
   AESEncryptionForPatientId encryption = AESEncryptionForPatientId();
   bool requestStatus = false;
+  SimpleRsa3 simpleRsa3 = SimpleRsa3();
   
   Widget _girlIconImage(){
     return Container(
@@ -115,16 +119,28 @@ class QRState extends State<QR> {
             actions: [
               ElevatedButton(
                 onPressed: () async {
-                  await firestore.collection('PatientDataRequestLog').doc(patientDataRequestLogId).update({
-                    'UnderRequest' : false,
-                  });
                   final CollectionReference collection = firestore.collection('PatientDataRequestLog').doc(patientDataRequestLogId).collection('Logs');
                   QuerySnapshot querySnapshot = await collection.where('ApprovalStatus', isEqualTo: ApprovalStatus.pending.name).get();
                   if (querySnapshot.docs.isNotEmpty){
-                    DocumentReference documentReference = querySnapshot.docs.first.reference;
-                    await documentReference.update({
-                      'ApprovalStatus': ApprovalStatus.approved.name,
-                    });
+                    DocumentSnapshot documentSnapshot = querySnapshot.docs.first;
+                    Map<String, dynamic> data = documentSnapshot.data() as Map<String, dynamic>;
+                    String doctorId = data['DoctorId'];
+                    DocumentSnapshot<Map<String, dynamic>> doctorDocument = await firestore.collection('doctor_users').doc(doctorId).get();
+                    if (doctorDocument.exists) {
+                      Map<String, dynamic> doctorData = doctorDocument.data() as Map<String, dynamic>;
+                      String doctorPublicKey = doctorData['PublicKey'];
+                      final encryptedKey = await simpleRsa3.encryptString("OGs5emllc3hlUU9kU09ZN0hlOE9mT1g2VE9lNDNhVk4=", doctorPublicKey) ?? '';
+                      DocumentReference documentReference = querySnapshot.docs.first.reference;
+                      await firestore.collection('PatientDataRequestLog').doc(patientDataRequestLogId).update({
+                        'UnderRequest' : false,
+                        'EncryptedSymmetricKey' : encryptedKey
+                      });
+                      await documentReference.update({
+                        'ApprovalStatus': ApprovalStatus.approved.name,
+                      });
+                    } else {
+                      Utils.showSnackbar("Doctor does not exist.");
+                    }
                   }
                   Utils.showSnackbar("Doctor approved.");
                   Navigator.of(context).pop();
